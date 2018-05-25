@@ -1,8 +1,10 @@
+<img src="diagrams/ThinkTank.svg" width="280" />
+
 # Metadata Serialization
 
-Metadata is data about data, and for bioinformatics its critical to understand the context of a dataset. For example, a file containing DNA sequence might get the file name "reads.bam". Many details are lost in the process that are crucial to performing a downstream analysis, for example, was the sequence from an animal or plant?
+Metadata is data about data, and for bioinformatics its critical to understand the context of a dataset. A file containing DNA sequence might get the file name "reads.bam". But what good is that? There are so many details that are crucial to performing a downstream analysis, for example, was the sequence from an animal or plant?
 
-For BAM, there is a saving grace that the file format includes some metadata. However, that metadata usually include just what's necessary to identify the sample, and perhaps some sequencer and alignment metadata. It will never include an individual's medical history, for example.
+For BAM, there is a saving grace that the file format includes some metadata. However, these metadata usually include just what's necessary to identify the sample, and perhaps some sequencer and alignment metadata. It will never include an individual's medical history, for example.
 
 We could try to enforce that salient metadata be included in filenames, or in headers in the files themselves, however, in practice, these metadata are often stored separately either as LIM systems, spreadsheets, or a combination of paper notes and experimental procedures.
 
@@ -36,9 +38,9 @@ The spreadsheet solution is to make pivot tables, or foreign keys that allow you
 
 ## XML is a 3-letter word!
 
-As programmers, we often strive to make interfaces that avoid humans having to view markup. I consider it an unfortunate fact of history whenever I open an XML file. However, that in no means speaks against the aspirations our web forebears had.
+As programmers, we often strive to make interfaces that avoid humans having to view markup. I consider it an unfortunate fact of history whenever I open an [XML](https://www.w3.org/XML/) file. However, that in no means speaks against the aspirations our web forebears had.
 
-We can easily answer our type and sparsity woes by representing our metadata as XML. This is because we can annotate fields with hierarchical relatioships, relate fields to other fields, and gradually build up a set of tags that define a specific document. And for however much developers have come to hate XML, it of course drives HTML and is many programmer's first introduction to document presentation on the web (other than games and photos).
+We can easily answer our type and sparsity woes by representing our metadata as XML. This is because we can annotate fields with hierarchical relatioships, relate fields to other fields, and gradually build up a set of tags that define a specific document. And for however much developers have come to hate XML, it of course drives [HTML](https://www.w3.org/html/) and is many programmer's first introduction to document presentation on the web (other than games and photos).
 
 Today's generations might have lost it for the most part, but there was a time not too long ago when this programming interface was available to everyone (not just programmers), since many sites that allowed client input didn't remove HTML tags.
 
@@ -52,7 +54,7 @@ So, to begin with, everyone uses XML, remember? The number of people who know HT
 
 Although fashions change like the seasons, a general pattern has been to separate the presentation and data layers for many websites. JavaScript allowed documents to retrieve data from a server and interpret it into a document model. For that reason, more and more services and tooling were built so that they could be easily consumed by frontend JavaScript code.
 
-JavaScript Objects replace carets for braces and adds array notation. Like XML, indentation is for readability only. We can have terse documents as our different metadata types can be represented using different Object models. As long as we are clear in defining our schema, we should be able to relate arbitrary metadata in JSON.
+[JavaScript Object Notation](http://json.org/) replaces carets for braces and adds array notation. Like XML, indentation is for readability only. We can have terse documents as our different metadata types can be represented using different Object models. As long as we are clear in defining our schema, we should be able to relate arbitrary metadata in JSON.
 
 ### Here be dragons
 
@@ -76,7 +78,7 @@ When it comes to bioinformatics, the domain moves so quickly that is difficult t
 
 JSON-LD adds some vocabulary to the JSON spec. However, these are just some special key names and JavaScript runtimes treat them just like any other key. For that reason, any parser that can handle JSON works with JSON-LD. JSON-LD enables you to annotate the meaning of a given field, or its semantic context. For example, if a field will always have a gene ontology term, you would add the @context for the Gene Ontology, and an $id that pointed to a specific term number there.
 
-Examples of JSON-LD context for bioinformatics data are here! https://github.com/prefixcommons/biocontext
+Examples of JSON-LD context for bioinformatics data are here in the [prefixcommons](https://github.com/prefixcommons/biocontext)!
 
 Combining well curated controlled vocabularies with our metadata schema will allow downstream processors to further reflect on the content of our metadata. This reduces confusion and repeated curation efforts, since mapping from one schema to another requires a human in the loop.
 
