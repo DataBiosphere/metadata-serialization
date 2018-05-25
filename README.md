@@ -8,7 +8,7 @@ For [SAM](https://samtools.github.io/hts-specs/SAMv1.pdf), there is a saving gra
 
 We could try to enforce that salient metadata be included in filenames, or in headers in the files themselves, however, in practice, these metadata are often stored separately either as [LIM systems](https://en.wikipedia.org/wiki/Laboratory_information_management_system), [spreadsheets](https://www.libreoffice.org/), or a combination of paper notes and experimental procedures.
 
-We'll try to engage the problem of metadata serialization from the perspective of the starting bioinformatics programmer, and hopefully in such a way that will generalize to other fields.
+We'll try to engage the problem of metadata serialization from the perspective of programmer providing bioinformatics infrastructure, and hopefully in such a way that will generalize to other fields.
 
 ## Why not use TSV?
 
@@ -24,7 +24,7 @@ Another simple example might be representing truth or falsity, how are we to kno
 
 ### I Like Tables, Why Don't You?
 
-Everyone is accustomed to tabular data and there are reasons both historical and technical why they are still favored. Spreadhseets themselves are an excellent first interface to a computer, but they've ditched these formats for their internal storage long ago. Aside from typing, they allow you to include macros, complex formatting, and multiple sheets per file.
+Everyone is accustomed to tabular data and there are reasons both historical and technical why they are still favored. Spreadsheets themselves are an excellent first interface to a computer, but the spreadsheet programs themselves ditched these formats for their internal storage long ago. Aside from typing, they allow you to include macros, complex formatting, and multiple sheets per file.
 
 Serializing tabular data as a table allows one to visually inspect the file more easily. The file itself when viewed in a text editor will often take up screen real estate usefully.
 
@@ -68,7 +68,7 @@ Although JSON creaks a little because of its origins, this is presented as a cas
 
 ### Schemas seem boring
 
-JSON Schema is a way of defining the types that can be represented and is similar to a XML Document Type Definition. By adding a link to the schema for an object, downstream processors can introspect on that schema before trying to go to work. If the JSON is some instance of an aliquot, the schema represents what fields are expected to be found there (and perhaps how to validate them)!
+JSON Schema is a way of defining the types that can be represented and is similar to a XML [Document Type Definition](https://en.wikipedia.org/wiki/Document_type_definition). By adding a link to the schema for an object, downstream processors can introspect on that schema before trying to go to work. If the JSON is some instance of an aliquot, the schema represents what fields are expected to be found there (and perhaps how to validate them)!
 
 That's very boring and powerful, the same way the dictionary is boring and powerful. Yes, few would sit around reading the dictionary, but if you know your way around the dictionary it makes new things more easily readable! Writing code that introspects on schemas means writing code that makes few implicit assumptions about the data, but knowing when to make your own schema is use someone else's is still hard.
 
@@ -76,7 +76,7 @@ When it comes to bioinformatics, the domain moves so quickly that is difficult t
 
 ## Did you say Sparkly Turtles?
 
-JSON-LD adds some vocabulary to the JSON spec. However, these are just some special key names and JavaScript runtimes treat them just like any other key. For that reason, any parser that can handle JSON works with JSON-LD. JSON-LD enables you to annotate the meaning of a given field, or its semantic context. For example, if a field will always have a gene ontology term, you would add the @context for the Gene Ontology, and an $id that pointed to a specific term number there.
+[JSON-LD](https://www.w3.org/TR/json-ld/) adds some vocabulary to the JSON spec. However, these are just some special key names and JavaScript runtimes treat them just like any other key. For that reason, any parser that can handle JSON works with JSON-LD. JSON-LD enables you to annotate the meaning of a given field, or its semantic context. For example, if a field will always have a gene ontology term, you would add the @context for the [Gene Ontology](http://geneontology.org/), and an $id that pointed to a specific term number there.
 
 Examples of JSON-LD context for bioinformatics data are here in the [prefixcommons](https://github.com/prefixcommons/biocontext)!
 
