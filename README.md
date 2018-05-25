@@ -82,7 +82,7 @@ Examples of JSON-LD context for bioinformatics data are here in the [prefixcommo
 
 Combining well curated controlled vocabularies with our metadata schema will allow downstream processors to further reflect on the content of our metadata. This reduces confusion and repeated curation efforts, since mapping from one schema to another requires a human in the loop.
 
-By using JSON-LD and well formed schemas, it's possible represent our metadata as JSON-LD. JSON-LD can then be serialized as RDF, stored as a turtle file, and can be queried against directly using SPARQL, or indexed into a triplet store. Triplets are statements of the form `subject, predicate, object`, SPARQL provides a query interface for working with arbitrary hierarchical data.
+By using JSON-LD and well formed schemas, it's possible represent our metadata as JSON-LD. JSON-LD can then be serialized as [RDF](https://www.w3.org/RDF/), stored as a turtle file, and can be queried against directly using SPARQL, or indexed into a triplet store. Triplets are statements of the form `subject, predicate, object`, SPARQL provides a query interface for working with arbitrary hierarchical data.
 
 This is the spirit behind FAIR efforts, or data findable, accessible, interoperable, and repeatable. The fully "Linked Open Data" stack allows one a great deal of creativity and enables future-proofing that would otherwise seem intractable.
 
