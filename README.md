@@ -2,11 +2,11 @@
 
 # Metadata Serialization
 
-Metadata is data about data, and for bioinformatics its critical to understand the context of a dataset. A file containing DNA sequence might get the file name "reads.bam". But what good is that? There are so many details that are crucial to performing a downstream analysis, for example, was the sequence from an animal or plant?
+Metadata is data about data, and for bioinformatics its critical to understand the context of a dataset. A file containing DNA sequence might get the file name "reads.sam". But what good is that? There are so many details that are crucial to performing a downstream analysis, for example, was the sequence from an animal or plant?
 
-For BAM, there is a saving grace that the file format includes some metadata. However, these metadata usually include just what's necessary to identify the sample, and perhaps some sequencer and alignment metadata. It will never include an individual's medical history, for example.
+For [SAM](https://samtools.github.io/hts-specs/SAMv1.pdf), there is a saving grace that the file format includes some metadata. However, these metadata usually include just what's necessary to identify the sample, and perhaps some sequencer and alignment metadata. It will never include an individual's medical history, for example.
 
-We could try to enforce that salient metadata be included in filenames, or in headers in the files themselves, however, in practice, these metadata are often stored separately either as LIM systems, spreadsheets, or a combination of paper notes and experimental procedures.
+We could try to enforce that salient metadata be included in filenames, or in headers in the files themselves, however, in practice, these metadata are often stored separately either as [LIM systems](https://en.wikipedia.org/wiki/Laboratory_information_management_system), [spreadsheets](https://www.libreoffice.org/), or a combination of paper notes and experimental procedures.
 
 We'll try to engage the problem of metadata serialization from the perspective of the starting bioinformatics programmer, and hopefully in such a way that will generalize to other fields.
 
