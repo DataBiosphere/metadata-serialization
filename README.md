@@ -95,3 +95,8 @@ If we got a new metadata dump, then we would have to do the same thing again, ed
 Another notable benefit is that downstream clients can benefit from controlled vocabularies that include synonyms. For example, imagine our input data includes a well annotated field that contains a "tissue type" and that this tissue type is annotated from a controlled vocabulary that includes synonyms. When a client wants to build an application that makes data findable by the keyword "brain", but we indexed the term "cortical", the client can refer to the ontology before accessing our index, thereby combining careful curation with high performance indexers to powerful effect!
 
 * [grlc.io](http://grlc.io/) turns SPARQL queries in github repositories into HTTP APIs!
+* [NIH List of SPARQL Endpoints](https://wiki.nci.nih.gov/display/VKC/SPARQL+Endpoints+List+of+URLs)
+* [Ontobee](http://www.ontobee.org/sparql/) list of SPARQL endpoints
+* [Zooma](https://www.ebi.ac.uk/spot/zooma/) helps annotate with controlled vocabularies
+* [FAIR Projector Builder](https://www.slideshare.net/markmoby/fair-projector-builder-79790642) helps make triplets from spreadsheets
+* [hca-bundle-jsonld](https://github.com/simonjupp/hca-bundle-jsonld) add JSON-LD context to HCA metadata
