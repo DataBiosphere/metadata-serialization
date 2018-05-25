@@ -58,7 +58,7 @@ Although fashions change like the seasons, a general pattern has been to separat
 
 ### Here be dragons
 
-JSON is meant to be parsed by JavaScript, and JavaScript is an interpreted language compiled at runtime. XML was designed in the absence of an explicit runtime, although it found use in many Java environments. To that end, for all of the carets we've removed, we added some complexity.
+JSON was originally meant to be parsed by JavaScript, and JavaScript is an interpreted language compiled at runtime. XML was designed in the absence of an explicit runtime, although it found use in many Java environments. To that end, for all of the carets we've removed, we added some complexity.
 
 For example, JavaScript as a runtime has to represent numeric values in memory somehow. Depending on the browser it can safely count up to 2^53 - 1. At that point it will overflow, and so we can't safely store large numbers as `Number` in Javascript.
 
