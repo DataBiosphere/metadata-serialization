@@ -10,7 +10,7 @@ We could try to enforce that salient metadata be included in filenames, or in he
 
 We'll try to engage the problem of metadata serialization from the perspective of programmer providing bioinformatics infrastructure, and hopefully in such a way that will generalize to other fields.
 
-## Why not use TSV?
+## The Argument Against TSV
 
 Since the metadata regarding a project most likely originated in a spreadsheet, why not just use TSV or CSV (tab separated or comma separated values)? All of the popular spreadsheet software can serialize and read these formats. Providing TSV metadata is an improvement over adding metadata to the filename, but let's take a moment to demonstrate some drawbacks.
 
@@ -93,3 +93,5 @@ If our metadata are stored in such a way that we can write SPARQL against them, 
 If we got a new metadata dump, then we would have to do the same thing again, editing code that introspected on a JSON. By representing our metadata as RDF these aspects could be written as SPARQL queries which generate the resulting index structure. This has a number of positive externalities. The first is that we can now export and import metadata without writing any code, just a query. 
 
 Another notable benefit is that downstream clients can benefit from controlled vocabularies that include synonyms. For example, imagine our input data includes a well annotated field that contains a "tissue type" and that this tissue type is annotated from a controlled vocabulary that includes synonyms. When a client wants to build an application that makes data findable by the keyword "brain", but we indexed the term "cortical", the client can refer to the ontology before accessing our index, thereby combining careful curation with high performance indexers to powerful effect!
+
+* [grlc.io](http://grlc.io/) turns SPARQL queries in github repositories into HTTP APIs!
