@@ -44,7 +44,7 @@ We can easily answer our type and sparsity woes by representing our metadata as 
 
 Today's generations might have lost it for the most part, but there was a time not too long ago when this programming interface was available to everyone (not just programmers), since many sites that allowed client input didn't remove HTML tags.
 
-Now, programmers are accustomed to editing configuration in YAML files, which is Yet-Another-Markup-Language. This one does away with carets and enforces indentation to express hierarchical relationships.
+Now, programmers are accustomed to editing configuration in [YAML](https://en.wikipedia.org/wiki/YAML) files, or YAML Ain't Markup Language. This one does away with carets and enforces indentation to express hierarchical relationships.
 
 So, although XML can be used to represent our metadata, its verbosity means we should aim to never expose it as a human interface. But as an extensible way for machines to interchange semantically related data, it works.
 
