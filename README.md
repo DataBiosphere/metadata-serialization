@@ -14,8 +14,7 @@ If you know of useful Metadata Serialization techniques please make a Pull Reque
 3. [Use Cases](#usecases)
 4. [Core Metadata](#coremetadata)
 5. [Annotation Resources](#resources)
-6. [schema.org](#schema)
-7. [Case Studies](#casestudies)
+6. [Case Studies](#casestudies)
 
 <a name="portability" />
 
